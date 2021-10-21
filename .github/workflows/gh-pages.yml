@@ -19,6 +19,7 @@ jobs:
         with:
           path: |
             ./node_modules
+          key: vuesample
 
       - name: Setup Node
         uses: actions/setup-node@v2
