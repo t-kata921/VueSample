@@ -19,7 +19,7 @@ jobs:
         with:
           path: |
             ./node_modules
-          key: vuesample
+          key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
       - name: Setup Node
         uses: actions/setup-node@v2
