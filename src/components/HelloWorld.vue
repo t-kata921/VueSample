@@ -1,3 +1,3 @@
 <template>
-  <div>Hellow World!!!!</div>
+  <div>Hellow World!</div>
 </template>
