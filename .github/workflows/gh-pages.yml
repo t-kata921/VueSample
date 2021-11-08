@@ -22,12 +22,20 @@ jobs:
 
       - run: yarn install
       - run: yarn build
-
+      - name: Upload dist
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: ./dist
   deploy:
     runs-on: ubuntu-20.04
     needs: [build]
     if: ${{ github.ref == 'refs/heads/master' }}
     steps:
+      - name: Download dist
+        uses: actions/download-artifact@v2
+        with: 
+          name: dist
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
